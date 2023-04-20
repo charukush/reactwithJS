@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
+// function App() {
+//   return (
+//     <div className="App">
+//       <h1>Hello this is a react learning with JS</h1>
+//     </div>
+//   );
+// }
+
+function Car(props){
+  const shoot=()=>{
+    alert("Great car!");
+  }
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>This is my {props.style.color} {props.style.model} car</h3>
+      <button className = "button" onClick={shoot}>Click</button>
     </div>
-  );
+  )
 }
 
-export default App;
+function Garage(){
+  const carColor = { color:"Yellow", model: "swift" };
+  return(
+    <>
+    <h1 className = "App">This is a Garage Function</h1>
+    <Car style = {carColor} />
+    </>
+    
+  )
+}
+
+export default Garage;
