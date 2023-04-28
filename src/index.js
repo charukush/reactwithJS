@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Garage from './App';
-import Goal from './Condition';
 import GarageList from './list';
+import MyForm from './Form';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Garage/>
-    <Goal isGoal={true}/>
+    <Garage />
     <GarageList />
+    <MyForm />
   </React.StrictMode>
 );
 

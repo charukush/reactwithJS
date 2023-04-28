@@ -9,26 +9,35 @@ import './App.css';
 // }
 
 function Car(props){
-  const shoot=()=>{
-    alert("Great car!");
-  }
+ 
   return(
     <div className="App">
-      <h3>This is my {props.style.color} {props.style.model} car</h3>
-      <button className = "button" onClick={shoot}>Click</button>
+      <h1>This is a {props.brand.color} {props.brand.model} car!!</h1>
     </div>
   )
 }
 
 function Garage(){
-  const carColor = { color:"Yellow", model: "swift" };
+  const carName = {model: "model-y", name:"Tesla", color: 'Green'};
   return(
     <>
-    <h1 className = "App">This is a Garage Function</h1>
-    <Car style = {carColor} />
+      <h2 className='App'>This is a Garage function calling Car inside!!</h2>
+    <Car brand= {carName} />
+    <Football />
     </>
     
   )
 }
+
+function Football() {
+  const shoot = () => {
+    alert("This is a click function");
+  }
+  return(
+    <button onClick={shoot}>Click shoot!!</button>
+  );
+}
+
+
 
 export default Garage;
