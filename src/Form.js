@@ -1,13 +1,18 @@
-import React from "react";
-import { ReactDOM } from "react-dom";
+import {useState} from "react";
 
 function MyForm(){
+    const [name, setName] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`this is a name: ${name}`);
+    }
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Enter Name:
-                <input type= "text" />
+                <input type= "text" value = {name} onChange = {(e) => setName(e.target.value)}/>
             </label>
-            <button>Submit</button>
+            <input type="submit" />
         </form>
     )
 }
